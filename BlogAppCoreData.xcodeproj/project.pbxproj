@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A028545F24FF034B0033BEDD /* PostListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A028545E24FF034B0033BEDD /* PostListViewModel.swift */; };
+		A028546124FF03610033BEDD /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A028546024FF03610033BEDD /* PostViewModel.swift */; };
+		A0FA04802516B4060045AE3D /* NSManagedContext+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FA047F2516B4050045AE3D /* NSManagedContext+.swift */; };
+		A0FA048D2516BA7B0045AE3D /* AddPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FA048C2516BA7B0045AE3D /* AddPostView.swift */; };
+		A0FA04922516BAA80045AE3D /* AddPostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FA04912516BAA80045AE3D /* AddPostViewModel.swift */; };
+		A0FA04972516BBFC0045AE3D /* View+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FA04962516BBFC0045AE3D /* View+.swift */; };
 		A0FC0BA124FEFFCA008AF118 /* BlogAppCoreDataApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FC0BA024FEFFCA008AF118 /* BlogAppCoreDataApp.swift */; };
 		A0FC0BA324FEFFCA008AF118 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FC0BA224FEFFCA008AF118 /* ContentView.swift */; };
 		A0FC0BA524FEFFCC008AF118 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0FC0BA424FEFFCC008AF118 /* Assets.xcassets */; };
@@ -35,6 +41,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A028545E24FF034B0033BEDD /* PostListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListViewModel.swift; sourceTree = "<group>"; };
+		A028546024FF03610033BEDD /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
+		A0FA047F2516B4050045AE3D /* NSManagedContext+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedContext+.swift"; sourceTree = "<group>"; };
+		A0FA048C2516BA7B0045AE3D /* AddPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostView.swift; sourceTree = "<group>"; };
+		A0FA04912516BAA80045AE3D /* AddPostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostViewModel.swift; sourceTree = "<group>"; };
+		A0FA04962516BBFC0045AE3D /* View+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+.swift"; sourceTree = "<group>"; };
 		A0FC0B9D24FEFFCA008AF118 /* BlogAppCoreData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlogAppCoreData.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0FC0BA024FEFFCA008AF118 /* BlogAppCoreDataApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogAppCoreDataApp.swift; sourceTree = "<group>"; };
 		A0FC0BA224FEFFCA008AF118 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -76,6 +88,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A0FA04842516B47D0045AE3D /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				A0FA047F2516B4050045AE3D /* NSManagedContext+.swift */,
+				A0FA04962516BBFC0045AE3D /* View+.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		A0FA04882516B5B30045AE3D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A028545E24FF034B0033BEDD /* PostListViewModel.swift */,
+				A028546024FF03610033BEDD /* PostViewModel.swift */,
+				A0FA04912516BAA80045AE3D /* AddPostViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		A0FC0B9424FEFFCA008AF118 = {
 			isa = PBXGroup;
 			children = (
@@ -99,13 +130,16 @@
 		A0FC0B9F24FEFFCA008AF118 /* BlogAppCoreData */ = {
 			isa = PBXGroup;
 			children = (
+				A0FC0BAE24FEFFCC008AF118 /* Info.plist */,
 				A0FC0BA024FEFFCA008AF118 /* BlogAppCoreDataApp.swift */,
 				A0FC0BA224FEFFCA008AF118 /* ContentView.swift */,
-				A0FC0BA424FEFFCC008AF118 /* Assets.xcassets */,
 				A0FC0BA924FEFFCC008AF118 /* Persistence.swift */,
-				A0FC0BAE24FEFFCC008AF118 /* Info.plist */,
+				A0FC0BA424FEFFCC008AF118 /* Assets.xcassets */,
 				A0FC0BAB24FEFFCC008AF118 /* BlogAppCoreData.xcdatamodeld */,
+				A0FA04842516B47D0045AE3D /* Extension */,
 				A0FC0BA624FEFFCC008AF118 /* Preview Content */,
+				A0FA04882516B5B30045AE3D /* ViewModel */,
+				A0FA048C2516BA7B0045AE3D /* AddPostView.swift */,
 			);
 			path = BlogAppCoreData;
 			sourceTree = "<group>";
@@ -265,9 +299,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A028546124FF03610033BEDD /* PostViewModel.swift in Sources */,
 				A0FC0BAD24FEFFCC008AF118 /* BlogAppCoreData.xcdatamodeld in Sources */,
+				A0FA04802516B4060045AE3D /* NSManagedContext+.swift in Sources */,
 				A0FC0BAA24FEFFCC008AF118 /* Persistence.swift in Sources */,
+				A028545F24FF034B0033BEDD /* PostListViewModel.swift in Sources */,
 				A0FC0BA324FEFFCA008AF118 /* ContentView.swift in Sources */,
+				A0FA048D2516BA7B0045AE3D /* AddPostView.swift in Sources */,
+				A0FA04922516BAA80045AE3D /* AddPostViewModel.swift in Sources */,
+				A0FA04972516BBFC0045AE3D /* View+.swift in Sources */,
 				A0FC0BA124FEFFCA008AF118 /* BlogAppCoreDataApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

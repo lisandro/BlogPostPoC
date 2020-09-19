@@ -52,4 +52,35 @@ struct PersistenceController {
             }
         })
     }
+
+    func getAllPosts() -> [Post] {
+        var posts = [Post]()
+
+        let request: NSFetchRequest<Post> = Post.fetchRequest()
+
+        do {
+            posts = try self.container.viewContext.fetch(request)
+        } catch let error as NSError {
+            print(error.localizedDescription)
+        }
+        return posts
+    }
+
+    func savePost(post: Post) throws {
+        let newPost = Post(context: container.viewContext)
+        newPost.body = post.body
+        newPost.title = post.title
+        try save()
+    }
+
+    func save() throws {
+        do {
+            try container.viewContext.save()
+        } catch {
+            // Replace this implementation with code to handle the error appropriately.
+            // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+            let nsError = error as NSError
+            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+        }
+    }
 }

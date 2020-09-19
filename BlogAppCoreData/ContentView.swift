@@ -15,24 +15,46 @@ struct ContentView: View {
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
         animation: .default)
     private var items: FetchedResults<Item>
+    @State private var isPresented: Bool = false
+
+    @ObservedObject private var postListViewModel = PostListViewModel()
 
     var body: some View {
-        List {
-            ForEach(items) { item in
-                Text("Item at \(item.timestamp!, formatter: itemFormatter)")
+        VStack {
+            List(postListViewModel.posts, id: \.title) { post in
+                Text(post.title)
             }
-            .onDelete(perform: deleteItems)
-        }
-        .toolbar {
-            #if os(iOS)
-            EditButton()
-            #endif
+            .onAppear {
+                self.postListViewModel.fetchAllPosts()
+            }
+            .sheet(isPresented: $isPresented, onDismiss: {
 
-            Button(action: addItem) {
-                Label("Add Item", systemImage: "plus")
-            }
+            }, content: {
+                AddPostView()
+            })
         }
+        .navigationTitle("Posts")
+        .navigationBarItems(trailing: Button("Add Post") {
+            self.isPresented = true
+        })
+        .embedInNavigationView()
     }
+
+//    List {
+//        ForEach(items) { item in
+//            Text("Item at \(item.timestamp!, formatter: itemFormatter)")
+//        }
+//        .onDelete(perform: deleteItems)
+//    }
+//    .toolbar {
+//    #if os(iOS)
+//    EditButton()
+//    #endif
+//
+//    Button(action: addItem) {
+//    Label("Add Item", systemImage: "plus")
+//    }
+//    }
 
     private func addItem() {
         withAnimation {
