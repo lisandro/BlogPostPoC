@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A01BB104251811C500C9C366 /* PostDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01BB103251811C500C9C366 /* PostDetailView.swift */; };
+		A01BB1092518129A00C9C366 /* PostUpdateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01BB1082518129A00C9C366 /* PostUpdateViewModel.swift */; };
 		A028545F24FF034B0033BEDD /* PostListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A028545E24FF034B0033BEDD /* PostListViewModel.swift */; };
 		A028546124FF03610033BEDD /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A028546024FF03610033BEDD /* PostViewModel.swift */; };
 		A0FA04802516B4060045AE3D /* NSManagedContext+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FA047F2516B4050045AE3D /* NSManagedContext+.swift */; };
@@ -41,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A01BB103251811C500C9C366 /* PostDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailView.swift; sourceTree = "<group>"; };
+		A01BB1082518129A00C9C366 /* PostUpdateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostUpdateViewModel.swift; sourceTree = "<group>"; };
 		A028545E24FF034B0033BEDD /* PostListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListViewModel.swift; sourceTree = "<group>"; };
 		A028546024FF03610033BEDD /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
 		A0FA047F2516B4050045AE3D /* NSManagedContext+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedContext+.swift"; sourceTree = "<group>"; };
@@ -88,6 +92,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A01BB10D2518170900C9C366 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A0FA048C2516BA7B0045AE3D /* AddPostView.swift */,
+				A0FC0BA224FEFFCA008AF118 /* ContentView.swift */,
+				A01BB103251811C500C9C366 /* PostDetailView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		A0FA04842516B47D0045AE3D /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +117,7 @@
 				A028545E24FF034B0033BEDD /* PostListViewModel.swift */,
 				A028546024FF03610033BEDD /* PostViewModel.swift */,
 				A0FA04912516BAA80045AE3D /* AddPostViewModel.swift */,
+				A01BB1082518129A00C9C366 /* PostUpdateViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -132,14 +147,13 @@
 			children = (
 				A0FC0BAE24FEFFCC008AF118 /* Info.plist */,
 				A0FC0BA024FEFFCA008AF118 /* BlogAppCoreDataApp.swift */,
-				A0FC0BA224FEFFCA008AF118 /* ContentView.swift */,
 				A0FC0BA924FEFFCC008AF118 /* Persistence.swift */,
 				A0FC0BA424FEFFCC008AF118 /* Assets.xcassets */,
 				A0FC0BAB24FEFFCC008AF118 /* BlogAppCoreData.xcdatamodeld */,
 				A0FA04842516B47D0045AE3D /* Extension */,
 				A0FC0BA624FEFFCC008AF118 /* Preview Content */,
+				A01BB10D2518170900C9C366 /* View */,
 				A0FA04882516B5B30045AE3D /* ViewModel */,
-				A0FA048C2516BA7B0045AE3D /* AddPostView.swift */,
 			);
 			path = BlogAppCoreData;
 			sourceTree = "<group>";
@@ -299,6 +313,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A01BB104251811C500C9C366 /* PostDetailView.swift in Sources */,
+				A01BB1092518129A00C9C366 /* PostUpdateViewModel.swift in Sources */,
 				A028546124FF03610033BEDD /* PostViewModel.swift in Sources */,
 				A0FC0BAD24FEFFCC008AF118 /* BlogAppCoreData.xcdatamodeld in Sources */,
 				A0FA04802516B4060045AE3D /* NSManagedContext+.swift in Sources */,

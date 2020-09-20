@@ -53,6 +53,22 @@ struct PersistenceController {
         })
     }
 
+    func getPostById(postId: UUID) throws -> Post? {
+        let request: NSFetchRequest<Post> = Post.fetchRequest()
+        request.predicate = NSPredicate(format: "postId = %@", (postId.uuidString))
+        let results = try self.container.viewContext.fetch(request)
+        return results.first
+    }
+
+    func updatePost(postId: String, title: String, body: String) throws {
+        let postToBeUpdated = try getPostById(postId: UUID(uuidString: postId)!)
+        if let postToBeUpdated = postToBeUpdated {
+            postToBeUpdated.title = title
+            postToBeUpdated.body = body
+            try save()
+        }
+    }
+
     func getAllPosts() -> [Post] {
         var posts = [Post]()
 
@@ -67,9 +83,6 @@ struct PersistenceController {
     }
 
     func savePost(post: Post) throws {
-        let newPost = Post(context: container.viewContext)
-        newPost.body = post.body
-        newPost.title = post.title
         try save()
     }
 

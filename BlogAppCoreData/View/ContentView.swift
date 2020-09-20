@@ -22,13 +22,17 @@ struct ContentView: View {
     var body: some View {
         VStack {
             List(postListViewModel.posts, id: \.title) { post in
-                Text(post.title)
+                NavigationLink(
+                    destination: PostDetailView(post: post),
+                    label: {
+                        Text(post.title)
+                    })
             }
             .onAppear {
                 self.postListViewModel.fetchAllPosts()
             }
             .sheet(isPresented: $isPresented, onDismiss: {
-
+                self.postListViewModel.fetchAllPosts()
             }, content: {
                 AddPostView()
             })
